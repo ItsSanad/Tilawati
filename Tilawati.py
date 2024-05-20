@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed May 15 11:19:04 2024
+@author: Sanad 
 
-@author: Sanad
 """
 
 from pydub import AudioSegment
@@ -29,11 +28,11 @@ def analyze_audio(audio_file):
     return highest_pitch, lowest_pitch, mean_pitch, average_highest_pitch, average_lowest_pitch, audio_array
 
 # Analyze first audio
-first_audio = "voices\Mishari_Al-afasi.mp3"
+first_audio = "voices\Al-Sudais.mp3"
 test1_highest_pitch, test1_lowest_pitch, test1_mean_pitch, test1_average_highest_pitch, test1_average_lowest_pitch, test1_audio_array = analyze_audio(first_audio)
 
 # Analyze second audio
-second_audio = "voices\Hassan_Saleh.mp3"
+second_audio = "voices\Saad_Al-Ghamdi.mp3"
 test2_highest_pitch, test2_lowest_pitch, test2_mean_pitch, test2_average_highest_pitch, test2_average_lowest_pitch, test2_audio_array = analyze_audio(second_audio)
 
 # Print the results
@@ -58,12 +57,12 @@ sns.set(style="whitegrid")
 plt.figure(figsize=(10, 6))
 
 # Plot test1.mp3 in blue
-sns.histplot(test1_audio_array, kde=True, color="blue", bins=50, label="Mishari_Al-afasi")
+sns.histplot(test1_audio_array, kde=True, color="blue", bins=50, label="Al-Sudais")
 
 # Plot test2.mp3 in red
-sns.histplot(test2_audio_array, kde=True, color="red", bins=50, label="Hassan_Saleh")
+sns.histplot(test2_audio_array, kde=True, color="red", bins=50, label="Saad_Al-Ghamdi")
 
-plt.title("Mishari_Al-afasi vs Hassan_Saleh")
+plt.title("Al-Sudais vs Saad_Al-Ghamdi")
 plt.xlabel("Pitch")
 plt.ylabel("Frequency")
 plt.axvline(x=test1_average_highest_pitch, color='blue', linestyle='--', label='Average Highest Pitch')
@@ -74,4 +73,3 @@ plt.axvline(x=test2_average_lowest_pitch, color='red', linestyle='-.', label='Av
 plt.axvline(x=test2_mean_pitch, color='red', linestyle=':', label='Mean Pitch')
 plt.legend()
 plt.show()
-
