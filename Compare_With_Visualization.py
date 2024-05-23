@@ -27,6 +27,13 @@ def analyze_audio(audio_file):
 
     return highest_pitch, lowest_pitch, mean_pitch, average_highest_pitch, average_lowest_pitch, audio_array
 
+def display(highest_pitch,lowest_pitch,mean_pitch,average_highest_pitch,average_lowest_pitch):
+    print("Highest pitch:", highest_pitch)
+    print("Lowest pitch:", lowest_pitch)
+    print("Mean pitch:", mean_pitch)
+    print("Average highest pitch:", average_highest_pitch)
+    print("Average lowest pitch:", average_lowest_pitch)
+    
 # Analyze first audio
 first_audio = "voices\Al-Sudais.mp3"
 test1_highest_pitch, test1_lowest_pitch, test1_mean_pitch, test1_average_highest_pitch, test1_average_lowest_pitch, test1_audio_array = analyze_audio(first_audio)
@@ -37,18 +44,10 @@ test2_highest_pitch, test2_lowest_pitch, test2_mean_pitch, test2_average_highest
 
 # Print the results
 print("Test 1:")
-print("Highest pitch:", test1_highest_pitch)
-print("Lowest pitch:", test1_lowest_pitch)
-print("Mean pitch:", test1_mean_pitch)
-print("Average highest pitch:", test1_average_highest_pitch)
-print("Average lowest pitch:", test1_average_lowest_pitch)
+display(test1_highest_pitch, test1_lowest_pitch, test1_mean_pitch, test1_average_highest_pitch, test1_average_lowest_pitch)
 print()
 print("Test 2:")
-print("Highest pitch:", test2_highest_pitch)
-print("Lowest pitch:", test2_lowest_pitch)
-print("Mean pitch:", test2_mean_pitch)
-print("Average highest pitch:", test2_average_highest_pitch)
-print("Average lowest pitch:", test2_average_lowest_pitch)
+display(test2_highest_pitch, test2_lowest_pitch, test2_mean_pitch, test2_average_highest_pitch, test2_average_lowest_pitch)
 
 # Set the style of seaborn
 sns.set(style="whitegrid")
